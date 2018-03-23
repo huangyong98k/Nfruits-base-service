@@ -1,0 +1,17 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.nsu.huangyong.config.NFruitsCollectorConfig",
+      "name": "nsu.huangyong.base",
+      "type": "com.nsu.huangyong.config.NFruitsCollectorConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.nsu.huangyong.config.NFruitsCollectorConfig",
+      "name": "nsu.huangyong.base.common-head-portrait",
+      "type": "java.lang.String"
+    }
+  ]
+}

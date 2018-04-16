@@ -1,11 +1,13 @@
 package com.nsu.huangyong.service.impl;
 
+import com.nsu.huangyong.common.constant.CommonRespCode;
 import com.nsu.huangyong.common.utils.NFruitsUtils;
 import com.nsu.huangyong.config.NFruitsCollectorConfig;
 import com.nsu.huangyong.dao.MemberDao;
 import com.nsu.huangyong.model.Member;
 import com.nsu.huangyong.service.CommonService;
 import com.nsu.huangyong.service.MemberService;
+import com.nsu.huangyong.vo.CommonResp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -79,4 +81,24 @@ public class MemberServiceIpml implements MemberService{
         memberDao.save(member);
     }
 
+    @Override
+    public CommonResp certification(String member,String trueName, String certificateType, String certificateNo) {
+        if (memberDao.findMemberByCertificateNo(certificateNo) != null){
+            return new CommonResp(CommonRespCode.FAIL,"该身份证已实名！！！");
+        }else {
+            memberDao.certification(member,trueName,certificateType,certificateNo);
+            return new CommonResp(CommonRespCode.SUCCESS);
+        }
+    }
+
+    @Override
+    @Transactional
+    public boolean modifyMember(String memberNo, String nickname, String sex, String birthDate) {
+        try {
+            memberDao.updateMember(memberNo,nickname,sex,birthDate);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }

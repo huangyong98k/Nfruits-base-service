@@ -70,5 +70,32 @@ public class MemberController {
         return new CommonResp(CommonRespCode.FAIL,"该号码未注册");
     }
 
+    @ApiOperation(value ="实名认证" )
+    @GetMapping("/member/certification")
+    public CommonResp certification(@RequestParam("member")String member,
+                                    @RequestParam("trueName")String trueName,
+                                    @RequestParam("certificateType")String certificateType,
+                                    @RequestParam("certificateNo")String certificateNo){
+        log.info("recevie message:{},{},{},{}",member,trueName,certificateType,certificateNo);
+        return memberService.certification(member,trueName,certificateType,certificateNo);
+    }
+
+    @ApiOperation(value ="修改个人信息" )
+    @GetMapping("/member/updataMember")
+    public CommonResp modifyMember(@RequestParam("memberNo") String memberNo,
+                                   @RequestParam("nickname")String nickname,
+                                   @RequestParam("sex")String sex,
+                                   @RequestParam("birthDate")String birthDate){
+        log.info("recevie message:{},{},{},{}",memberNo,nickname,sex,birthDate);
+        boolean isTrue = memberService.modifyMember(memberNo,nickname,sex,birthDate);
+        if (isTrue){
+            log.info("updata member success!!!");
+            return new CommonResp(CommonRespCode.SUCCESS);
+        } else {
+            log.error("updata member failed!!");
+            return new CommonResp(CommonRespCode.FAIL,"修改失败！！！");
+        }
+    }
+
 
 }

@@ -60,7 +60,7 @@ public class Member {
     /**
      * 会员等级（0：普通会员 ）
      */
-    private int member_level;
+    private int memberLevel;
     /**
      * 会员到期时间
      */

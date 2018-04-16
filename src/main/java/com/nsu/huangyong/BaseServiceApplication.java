@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Slf4j
 @SpringBootApplication
-public class BaseServiceApplacation {
+public class BaseServiceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(BaseServiceApplacation.class,args);
+        SpringApplication.run(BaseServiceApplication.class,args);
     }
 }

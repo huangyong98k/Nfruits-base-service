@@ -1,7 +1,7 @@
 package com.nsu.huangyong.service.impl;
 
 import com.nsu.huangyong.dao.GoodsDao;
-import com.nsu.huangyong.model.Goods;
+import com.nsu.huangyong.pojo.Goods;
 import com.nsu.huangyong.service.GoodsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,10 +1,8 @@
 package com.nsu.huangyong.web;
 
-import com.nsu.huangyong.common.constant.CommonRespCode;
 import com.nsu.huangyong.common.utils.JSONUtils;
-import com.nsu.huangyong.model.Goods;
+import com.nsu.huangyong.pojo.Goods;
 import com.nsu.huangyong.service.GoodsService;
-import com.nsu.huangyong.vo.CommonResp;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;

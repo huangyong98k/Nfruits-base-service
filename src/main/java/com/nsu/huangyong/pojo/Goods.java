@@ -1,4 +1,4 @@
-package com.nsu.huangyong.model;
+package com.nsu.huangyong.pojo;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

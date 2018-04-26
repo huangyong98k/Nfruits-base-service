@@ -1,6 +1,6 @@
 package com.nsu.huangyong.service;
 
-import com.nsu.huangyong.model.Goods;
+import com.nsu.huangyong.pojo.Goods;
 
 import java.util.List;
 

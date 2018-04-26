@@ -3,7 +3,7 @@ package com.nsu.huangyong.service.impl;
 import com.nsu.huangyong.common.utils.NFruitsUtils;
 import com.nsu.huangyong.config.NFruitsCollectorConfig;
 import com.nsu.huangyong.dao.SellerDao;
-import com.nsu.huangyong.model.Seller;
+import com.nsu.huangyong.pojo.Seller;
 import com.nsu.huangyong.service.CommonService;
 import com.nsu.huangyong.service.SellerService;
 import lombok.extern.slf4j.Slf4j;

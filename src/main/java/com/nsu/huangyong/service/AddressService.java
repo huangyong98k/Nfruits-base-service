@@ -1,6 +1,6 @@
 package com.nsu.huangyong.service;
 
-import com.nsu.huangyong.model.Address;
+import com.nsu.huangyong.pojo.Address;
 import com.nsu.huangyong.vo.CommonResp;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.nsu.huangyong.dao;
 
-import com.nsu.huangyong.model.Address;
+import com.nsu.huangyong.pojo.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;

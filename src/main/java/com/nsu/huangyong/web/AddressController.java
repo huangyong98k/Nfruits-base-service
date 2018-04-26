@@ -2,7 +2,7 @@ package com.nsu.huangyong.web;
 
 import com.nsu.huangyong.common.constant.CommonRespCode;
 import com.nsu.huangyong.common.utils.JSONUtils;
-import com.nsu.huangyong.model.Address;
+import com.nsu.huangyong.pojo.Address;
 import com.nsu.huangyong.service.AddressService;
 import com.nsu.huangyong.vo.CommonResp;
 import io.swagger.annotations.Api;

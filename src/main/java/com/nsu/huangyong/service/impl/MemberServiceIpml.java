@@ -4,7 +4,7 @@ import com.nsu.huangyong.common.constant.CommonRespCode;
 import com.nsu.huangyong.common.utils.NFruitsUtils;
 import com.nsu.huangyong.config.NFruitsCollectorConfig;
 import com.nsu.huangyong.dao.MemberDao;
-import com.nsu.huangyong.model.Member;
+import com.nsu.huangyong.pojo.Member;
 import com.nsu.huangyong.service.CommonService;
 import com.nsu.huangyong.service.MemberService;
 import com.nsu.huangyong.vo.CommonResp;

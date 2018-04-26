@@ -1,6 +1,6 @@
 package com.nsu.huangyong.dao;
 
-import com.nsu.huangyong.model.Goods;
+import com.nsu.huangyong.pojo.Goods;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;

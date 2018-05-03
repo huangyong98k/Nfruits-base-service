@@ -3,7 +3,9 @@ package com.nsu.huangyong.web;
 import com.nsu.huangyong.common.constant.CommonRespCode;
 import com.nsu.huangyong.common.utils.JSONUtils;
 import com.nsu.huangyong.pojo.Address;
+import com.nsu.huangyong.pojo.BankCard;
 import com.nsu.huangyong.service.AddressService;
+import com.nsu.huangyong.service.BankCardService;
 import com.nsu.huangyong.vo.CommonResp;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -19,10 +21,12 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/api")
-@Api(value = "API-base-service",description = "收货地址管理")
+@Api(value = "API-base-service",description = "收货地址和银行卡管理")
 public class AddressController {
     @Autowired
     private AddressService addressService;
+    @Autowired
+    private BankCardService bankCardService;
 
     @ApiOperation(value ="新增收货地址" )
     @GetMapping("/address/add")
@@ -69,5 +73,36 @@ public class AddressController {
     public CommonResp addressInvalid(@RequestParam("addressId") String addressId){
         log.info("recevie message: {}",addressId);
         return addressService.addressInvalid(addressId);
+    }
+
+    @ApiOperation(value ="根据会员编号查看可用银行卡" )
+    @GetMapping("/bankcard/available")
+    public String queryAvailablebankCard(@RequestParam("memberNo") String memberNo){
+        log.info("recevie message: {}",memberNo);
+        List<BankCard> list =  bankCardService.availableBankCard(memberNo);
+        if (list.isEmpty()){
+            return JSONUtils.toJsonAndIgnoreException(new CommonResp(CommonRespCode.FAIL,"no data !!!"));
+        }else {
+            return JSONUtils.toJsonAndIgnoreException(list);
+        }
+    }
+
+    @ApiOperation(value ="根据收货地址Id使银行卡失效" )
+    @GetMapping("/bankcard/invalid")
+    public CommonResp bankCardInvalid(@RequestParam("bankCardId") String bankCardId){
+        log.info("recevie message: {}",bankCardId);
+        return bankCardService.bankCardInvalid(bankCardId);
+    }
+
+    @ApiOperation(value ="新增银行卡" )
+    @GetMapping("/bankcar/add")
+    public CommonResp addbankCard(@RequestParam("memberNo") String memberNo,
+                                 @RequestParam("cardNo")String cardNo,
+                                 @RequestParam("cardOperator")String cardOperator,
+                                 @RequestParam("phoneNo")String phoneNo,
+                                 @RequestParam("trueName")String trueName,
+                                 @RequestParam("cardType")String cardType){
+        log.info("recevie message: {},{},{},{},{},{},{},{}",memberNo,cardNo,cardOperator,phoneNo,trueName,cardType);
+        return bankCardService.addBankCard(memberNo,cardNo,cardOperator,phoneNo,trueName,cardType);
     }
 }

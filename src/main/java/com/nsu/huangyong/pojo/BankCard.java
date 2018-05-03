@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Created by Huang-Yong on 2018/4/26
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Entity
 @Data
+@Table(name = "bankcard")
 public class BankCard {
     @Id
     @GeneratedValue
@@ -41,6 +43,10 @@ public class BankCard {
      * 卡类型
      */
     private String cardType;
+    /**
+     * 卡状态（1：可用 2：失效）
+     */
+    private String status;
 
     public BankCard(String cardNo, String memberNo, String cardOperator, String phoneNo, String trueName, String cardType) {
         this.cardNo = cardNo;

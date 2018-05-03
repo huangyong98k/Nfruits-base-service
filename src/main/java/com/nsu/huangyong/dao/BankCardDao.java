@@ -18,9 +18,9 @@ public interface BankCardDao extends JpaRepository<BankCard,Long>{
     @Modifying
     List<BankCard> findAvailableBankCard(String memberNo, String status);
     /**
-     * 将地址改为不可用状态
+     * 将银行卡改为不可用状态
      */
     @Query(value = "update bankcard set status = ?2 where id = ?1",nativeQuery = true)
     @Modifying
-    void bankCardInvalid(String bankCardId,Integer status);
+    void bankCardInvalid(String bankCardId,String status);
 }
